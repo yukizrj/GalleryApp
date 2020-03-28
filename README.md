@@ -70,3 +70,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 =======
 # GalleryApp
 >>>>>>> 90d811a6b9c4ee6fb34e66d737d1643af361f0bc
+
+###issues
+
+- react-images-upload compile issue
+
+details: Module not found: A package is trying to access another package without the second one being listed as a dependency of the first one.
+solution: install peer dependencies(react, react-dom, react-flip-move, react-images-upload)
+

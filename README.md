@@ -76,5 +76,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - react-images-upload compile issue
 
 details: Module not found: A package is trying to access another package without the second one being listed as a dependency of the first one.
+
 solution: install peer dependencies(react, react-dom, react-flip-move, react-images-upload)
 

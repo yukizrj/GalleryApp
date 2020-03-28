@@ -1203,6 +1203,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.5.5":
+  version: 7.9.2
+  resolution: "@babel/runtime@npm:7.9.2"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: 3317dc3ccac0b1d50053d6bb4bb8b3d62650df6aed6910fc22d9ea02db38754a082ca243955e5e421a1d89f67a5cdfd8f24fbe69dd63bb5868b7f8ab7ecb1271
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.4.0, @babel/template@npm:^7.8.3":
   version: 7.8.3
   resolution: "@babel/template@npm:7.8.3"
@@ -6095,12 +6104,17 @@ fsevents@^1.2.7:
     bootstrap: ^4.4.1
     bootstrap-social: ^5.1.1
     font-awesome: ^4.7.0
-    react: ^16.13.0
-    react-dom: ^16.13.0
+    react: ^16.13.1
+    react-dom: ^16.13.1
+    react-flip-move: ^3.0.4
+    react-images-upload: ^1.2.8
     react-popper: ^1.3.7
+    react-redux: ^7.2.0
+    react-redux-form: ^1.16.14
     react-router-dom: ^5.1.2
     react-scripts: 3.4.0
     reactstrap: ^8.4.1
+    redux: ^4.0.5
   languageName: unknown
   linkType: soft
 
@@ -6485,7 +6499,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.1.0":
+"hoist-non-react-statics@npm:^3.1.0, hoist-non-react-statics@npm:^3.3.0":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -6694,6 +6708,13 @@ fsevents@^1.2.7:
   version: 1.0.0
   resolution: "https-browserify@npm:1.0.0"
   checksum: 19384f98302d444e2da979e348c027afa2e2aa835deebc98ce9252facc08cd1fd0d776f1e2a9c538d9ff1e2e286be556d315f7b5d44d499746dbfaf4844929db
+  languageName: node
+  linkType: hard
+
+"icepick@npm:^1.1.0":
+  version: 1.3.0
+  resolution: "icepick@npm:1.3.0"
+  checksum: 5bf62cc429a933ee4c43b7aed3a17b1731d8973358bfcb3884a394b911aea2411a46088a482eea78a06fc62cd880c60a976287437f0b127a2dba5a1b3899c496
   languageName: node
   linkType: hard
 
@@ -6915,7 +6936,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"invariant@npm:^2.2.2, invariant@npm:^2.2.4":
+"invariant@npm:^2.2.2, invariant@npm:^2.2.4, invariant@npm:~2.2.1":
   version: 2.2.4
   resolution: "invariant@npm:2.2.4"
   dependencies:
@@ -8379,6 +8400,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash.get@npm:~4.4.2":
+  version: 4.4.2
+  resolution: "lodash.get@npm:4.4.2"
+  checksum: 37d69a668f582807bb89c5d53664c798aaa5e52ba131b9bed9af4fead1b753a32404bf63cdc68ca774ae776f832ec830ed692059dedeec3165f8b235451f1a6b
+  languageName: node
+  linkType: hard
+
 "lodash.memoize@npm:^4.1.2":
   version: 4.1.2
   resolution: "lodash.memoize@npm:4.1.2"
@@ -8409,6 +8437,13 @@ fsevents@^1.2.7:
   dependencies:
     lodash._reinterpolate: ^3.0.0
   checksum: 41e4244fe816fa34d7b82e51b9417ab6074275348a358359c2dad5315a002dd8d56a30913a3f4ba24165e0c1ace1310f8fdb0ef8bedca893abb4e5846b9afa40
+  languageName: node
+  linkType: hard
+
+"lodash.topath@npm:~4.5.2":
+  version: 4.5.2
+  resolution: "lodash.topath@npm:4.5.2"
+  checksum: dd4f2d19854c004a047efd7779cef18aa1a872e2dbe7cd6ce9aab4e70aaac34b242e7455cdc6488deaeb0cbdf39119f413fae77e35b12ce6f71e2c85b07cb994
   languageName: node
   linkType: hard
 
@@ -10975,7 +11010,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.6, prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -11235,17 +11270,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.13.0":
-  version: 16.13.0
-  resolution: "react-dom@npm:16.13.0"
+"react-dom@npm:^16.13.1":
+  version: 16.13.1
+  resolution: "react-dom@npm:16.13.1"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
     prop-types: ^15.6.2
-    scheduler: ^0.19.0
+    scheduler: ^0.19.1
   peerDependencies:
-    react: ^16.0.0
-  checksum: c1004685cdb35ddf5807b0b10b55a4ca4091ce007e62bfb305f01d247a7b83583407e5103fb23fa9a5b4604f986288c326d2594d2d2d1c745f5d080a28d21d6d
+    react: ^16.13.1
+  checksum: 2c51e67bd908d052a01ba701fa6b3d92796a91aa2c637bf3e5d98ba9e7ff5bfd7627af43a30fc8c44f1a9601204738c991149f35210303abc56e1846d2fb2a06
   languageName: node
   linkType: hard
 
@@ -11253,6 +11288,29 @@ fsevents@^1.2.7:
   version: 6.0.6
   resolution: "react-error-overlay@npm:6.0.6"
   checksum: 56303daa3d1922e09450b09f33ce4c914977212dde96e070dde89e71918710179f81bd4afc05bbb1f49a196ab86065706073d7638159a1654365706d9df3803b
+  languageName: node
+  linkType: hard
+
+"react-flip-move@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "react-flip-move@npm:3.0.4"
+  peerDependencies:
+    react: ">=16.3.x"
+    react-dom: ">=16.3.x"
+  checksum: 4555746cec815e1a2858c0480187c4711df8c6863e9fb76014032bfad15ae8c25b399a241141493e5ab6163232fe43e2d3757344190e6ca3c363699dd1388928
+  languageName: node
+  linkType: hard
+
+"react-images-upload@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "react-images-upload@npm:1.2.8"
+  dependencies:
+    react: ^16.12.0
+    react-flip-move: ^3.0.4
+  peerDependencies:
+    react: ^16.3.0
+    react-dom: ^16.3.0
+  checksum: 94ba1870f99f3414d3bd5afb8acd906a6683c6de3b12c7d315a5e40670af4360b9309e68984032189155161d651a1502334d429ab0cb4e4e70da92f72c40af30
   languageName: node
   linkType: hard
 
@@ -11270,10 +11328,24 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-is@npm:^16.9.0":
+  version: 16.13.1
+  resolution: "react-is@npm:16.13.1"
+  checksum: 9659c004a370c15275784b1e848b735a7d403b5ba455e76b48d0840b05ee12bd79ef1dea520e7d70228367e0d95cc3cb894fbcbfda91c198b3339a96a0ecacc4
+  languageName: node
+  linkType: hard
+
 "react-lifecycles-compat@npm:^3.0.4":
   version: 3.0.4
   resolution: "react-lifecycles-compat@npm:3.0.4"
   checksum: 5845821224611602cb37ea3947d73efe619666a2f8ad7dbadd82bcdae823c499de214d39b3503e9fbf8da3daa2c2483e21ce01bdd65d6cce99dd2f42e3c838dc
+  languageName: node
+  linkType: hard
+
+"react-native-segmented-control-tab@npm:^3.2.1":
+  version: 3.4.1
+  resolution: "react-native-segmented-control-tab@npm:3.4.1"
+  checksum: ed577c77f554c743ef9bf32a5c821732e457228b6ad7f1e7b5aedf584f01ccb481efa97f6438f4e2a0f991027b0b152bf6796b789965266593e5e9f8e1afaa55
   languageName: node
   linkType: hard
 
@@ -11291,6 +11363,49 @@ fsevents@^1.2.7:
   peerDependencies:
     react: 0.14.x || ^15.0.0 || ^16.0.0
   checksum: 1e8022d76cef0d9375dd737516dafa96911f1dabc5b2a8276cbc83399541b3bc9823c126540c29c7066a603d086f1975f5d7517bfb25dea00953520eb71610e8
+  languageName: node
+  linkType: hard
+
+"react-redux-form@npm:^1.16.14":
+  version: 1.16.14
+  resolution: "react-redux-form@npm:1.16.14"
+  dependencies:
+    icepick: ^1.1.0
+    invariant: ~2.2.1
+    lodash.get: ~4.4.2
+    lodash.topath: ~4.5.2
+    prop-types: ^15.5.6
+    react-native-segmented-control-tab: ^3.2.1
+    shallow-compare: ^1.2.1
+  peerDependencies:
+    react: ^15.3.0 || ^16.0.0
+    react-dom: ^0.14.7 || ^15.0.0 || ^16.0.0
+    react-redux: ^4.0.0 || ^5.0.3 || ^7.0.0
+    redux: ^3.0.0 || ^4.0.0
+  checksum: 125c1738920f990c8ad238a2fd576e9ff9e2ad8f0fc13cc9044909956a6dd406f5f7347bc36221a418e79dca9675e9ccfc587fe24621774a4bfcd10d366defaf
+  languageName: node
+  linkType: hard
+
+"react-redux@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "react-redux@npm:7.2.0"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+    hoist-non-react-statics: ^3.3.0
+    loose-envify: ^1.4.0
+    prop-types: ^15.7.2
+    react-is: ^16.9.0
+  peerDependencies:
+    react: ^16.8.3
+    react-dom: "*"
+    react-native: "*"
+    redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: c1d92faacebe014a88b13d7a845aa28c87130788c5574a7ca69844fdeab464c5d412f7fa1bfc9d6b945882848952967ebaeb51fb34e50dc58b35eb7d60bbf7e3
   languageName: node
   linkType: hard
 
@@ -11417,7 +11532,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react@npm:^16.13.0":
+"react@npm:^16.12.0":
   version: 16.13.0
   resolution: "react@npm:16.13.0"
   dependencies:
@@ -11425,6 +11540,17 @@ fsevents@^1.2.7:
     object-assign: ^4.1.1
     prop-types: ^15.6.2
   checksum: 9f635d242c4937101ba8a234753078a6870eaaf2ec1d7f95f7c16a562be7473b55efb3e162c903bb0402b94f90dcc84ad22e11dc93387c5a0a2c39cb65b776d9
+  languageName: node
+  linkType: hard
+
+"react@npm:^16.13.1":
+  version: 16.13.1
+  resolution: "react@npm:16.13.1"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+    prop-types: ^15.6.2
+  checksum: 9c3763a71a6d21c9cef68533ef711522b8a47e8664b0a47250d859dcc34056f3adf846f5a44439e1da95d043b2bc83a6fa6b7bfd178010d1130be296c25bed38
   languageName: node
   linkType: hard
 
@@ -11558,6 +11684,16 @@ fsevents@^1.2.7:
     indent-string: ^4.0.0
     strip-indent: ^3.0.0
   checksum: 55983b363f96f5b55663c001c1b9cb4e090d82e18ce6baad1076d6aac400306f8d2f45e9bdaf11e7a4400660b95a81e3251eb2c8cfc6df175105be5bb778fcd4
+  languageName: node
+  linkType: hard
+
+"redux@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "redux@npm:4.0.5"
+  dependencies:
+    loose-envify: ^1.4.0
+    symbol-observable: ^1.2.0
+  checksum: bf8fcfa44db283545db4dd56043de7e164852ac81b61503f2c06e2c9a0d5670338c3722fe642134afb633346507f1568a309da9153c95d2213a0ff404d31625a
   languageName: node
   linkType: hard
 
@@ -12124,13 +12260,13 @@ resolve@1.15.0:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.19.0":
-  version: 0.19.0
-  resolution: "scheduler@npm:0.19.0"
+"scheduler@npm:^0.19.1":
+  version: 0.19.1
+  resolution: "scheduler@npm:0.19.1"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-  checksum: 7f3bd0145215001ca7c060c047cca4e85ee29370640f599ae33d73e6f021ae298eaf6364e97453f067147e51a754890785cedefdcc103a5628d8d205cb345cb4
+  checksum: 799b2c0e5935b098531cf8f5f524b9ed6c70d55648e1234b8f8ed7fad7880e44eda65983229235da4719fffad049157b6f9e6fcd132dfa969892c4a9cb265a92
   languageName: node
   linkType: hard
 
@@ -12323,6 +12459,13 @@ resolve@1.15.0:
   dependencies:
     kind-of: ^6.0.2
   checksum: 45d71829b3cc7c66ae531bb3a7fd7209cced093ec7fdfcd6a1edd29a60ff96d1a11e418c9ea9f0c378586f20ece3c1579a40e58e07c2e7c79ca8bc10778d1efa
+  languageName: node
+  linkType: hard
+
+"shallow-compare@npm:^1.2.1":
+  version: 1.2.2
+  resolution: "shallow-compare@npm:1.2.2"
+  checksum: 1076055512e602905b3b8076e30dd432dc2d07c3e004a9a1740c835f1f36975804559ca02bad126f0bd79eea8b6c4cf09a98b365ff51ff5f1c28e165075ff629
   languageName: node
   linkType: hard
 
@@ -13026,6 +13169,13 @@ resolve@1.15.0:
   bin:
     svgo: ./bin/svgo
   checksum: cfa94b7984952c8f976350eac72fda492436be44f4b4ce2a788a2be03fe90cc23bb958d4f1b98b0e2e003cb7b72edd9f3017dcf5c905c4576c2c6dddd24c9ed7
+  languageName: node
+  linkType: hard
+
+"symbol-observable@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "symbol-observable@npm:1.2.0"
+  checksum: b033c8d6fa245a68b421b891b2fe07a9459274593405250918c7aea7ce4e991a94b1491bae1b68a8d90bd05c35a2f6862258b97334931df13850fe4daa0b2999
   languageName: node
   linkType: hard
 

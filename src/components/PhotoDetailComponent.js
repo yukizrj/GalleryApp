@@ -4,7 +4,6 @@ import { Card, CardImg, CardText, CardBody,
 import { Link } from 'react-router-dom';
 
 function RenderPhoto({photo}){
-    console.log(photo.image);
     return(
         <Card>
                 <CardImg src={photo.image} alt={photo.name}/>

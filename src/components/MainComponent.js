@@ -5,8 +5,16 @@ import PhotoDetail from './PhotoDetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import NewPhoto from './NewPhotoComponent';
+import { connect } from 'react-redux';
+
+//map state to props from app to main
+const mapStateToProps = state => {
+    return {
+      photos: state.photos
+    }
+  }
 
 class Main extends Component{
     constructor(props){
@@ -15,8 +23,6 @@ class Main extends Component{
             photos: PHOTOS
         };
     }
-
-    
 
     render(){
 
@@ -28,7 +34,7 @@ class Main extends Component{
 
         const PhotoWithId = ({match}) =>{
             return(
-                <PhotoDetail photo={this.state.photos.filter((photo) => photo.id === parseInt(match.params.photoId,10))[0]}/>
+                <PhotoDetail photo={this.props.photos.filter((photo) => photo.id === parseInt(match.params.photoId,10))[0]}/>
             );
         };
 
@@ -37,7 +43,7 @@ class Main extends Component{
                 <Header/>
                 <Switch>
                     <Route path="/home" component={HomePage}/>
-                    <Route exact path="/albums" component={() => <Albums photos={this.state.photos}/>}/>
+                    <Route exact path="/albums" component={() => <Albums photos={this.props.photos}/>}/>
                     <Route path="/albums/:photoId" component={PhotoWithId}/>
                     <Route exact path="/newphoto" component={NewPhoto}/>
                     <Redirect to="/home"/>
@@ -49,4 +55,4 @@ class Main extends Component{
 
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));

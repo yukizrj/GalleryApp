@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbItem,
     Button, Row, Col, Label } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Link } from 'react-router-dom';
-import ImageUploader from 'react-images-upload';
+import axios from 'axios';
 
 const required = (val) => val && val.length;
 
@@ -17,20 +17,23 @@ class NewPhoto extends Component {
             images: []
         };
 
-        this.onDrop = this.onDrop.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    onDrop(picture){
-        this.setState({
-            images: this.state.images.concat(picture),
-        });
-    }
 
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
+
+        //upload image to assets/images folder
+        const data = new FormData();
+        data.append('file', values.images);
+        axios.post("http://localhost:8000/upload", data, { // receive two parameter endpoint url ,form data 
+            })
+            .then(res => { // then print response status
+            console.log(res.statusText)
+        })
         // event.preventDefault();
     }
 
@@ -59,17 +62,14 @@ class NewPhoto extends Component {
                     <div className="col-12 col-md-9">
                         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                             <Row className="form-group">
-                            <ImageUploader
-                                withIcon={true}
-                                buttonText='Choose images'
-                                onChange={this.onDrop}
-                                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                                maxFileSize={5242880}
-                                singleImage={true}
-                                withPreview={true}
-                                fileSizeError='size is too big'
-                                fileTypeError='is not supported file extension.'
-                            />
+                            <Label htmlFor="images" md={2}>Choose photo</Label>
+                            <Col md={10}>
+                            <Control.file model=".images" id="images" name="images"
+                                accept='.jpg, .png, .jpeg'
+                                value={this.state.images}
+                                onChange={this.handleInputChange}/>
+                            </Col>
+                            
                             </Row>
                             <Row className="form-group">
                                 <Label htmlFor="name" md={2}>Photo name</Label>

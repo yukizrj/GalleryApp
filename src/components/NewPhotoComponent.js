@@ -23,23 +23,23 @@ class NewPhoto extends Component {
 
 
     handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
-
         //upload image to assets/images folder
         const data = new FormData();
-        data.append('file', values.images);
+        data.append('file', this.state.images);
         axios.post("http://localhost:8000/upload", data, { // receive two parameter endpoint url ,form data 
             })
             .then(res => { // then print response status
             console.log(res.statusText)
         })
         // event.preventDefault();
+        //add new photo object
+        const imgpath = "assets/images/" + this.state.images.name;
+        this.props.addPhoto(values.name, imgpath, values.description);
     }
 
     handleInputChange(event){
         const target = event.target;
-        const value = target.value;
+        const value = target.type === 'file' ? target.files[0] : target.value;
         const name = target.name;
         this.setState({
             [name]: value
@@ -66,7 +66,7 @@ class NewPhoto extends Component {
                             <Col md={10}>
                             <Control.file model=".images" id="images" name="images"
                                 accept='.jpg, .png, .jpeg'
-                                value={this.state.images}
+                                
                                 onChange={this.handleInputChange}/>
                             </Col>
                             

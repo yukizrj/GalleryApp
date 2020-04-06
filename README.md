@@ -15,6 +15,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Troubleshoot
 - react-images-upload compile issue
+
   -**Message:** Module not found: A package is trying to access another package without the second one being listed as a dependency of the first one.
+  
   -**Solution:** install peer dependencies(react, react-dom, react-flip-move, react-images-upload)
 

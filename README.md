@@ -4,9 +4,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### How to run project
-In the project directory, open two command promps and run:
+In the project directory, open two command promps:
+one promp run the react app
 ### `yarn start`
-and the other promp window run
+and the other promp window run the server
 ### `nodemon server.js`
 
 Runs the app in the development mode.<br />

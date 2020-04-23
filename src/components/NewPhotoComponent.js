@@ -4,6 +4,7 @@ import { Breadcrumb, BreadcrumbItem,
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { withRouter } from 'react-router';
 
 const required = (val) => val && val.length;
 
@@ -35,6 +36,8 @@ class NewPhoto extends Component {
         //add new photo object
         const imgpath = "assets/images/" + this.state.images.name;
         this.props.addPhoto(values.name, imgpath, values.description);
+        //redirect to albums page
+        this.props.history.push('/albums');
     }
 
     handleInputChange(event){
@@ -113,4 +116,4 @@ class NewPhoto extends Component {
     
 }
 
-export default NewPhoto;
+export default withRouter(NewPhoto);

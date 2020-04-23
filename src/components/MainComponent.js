@@ -8,7 +8,7 @@ import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import NewPhoto from './NewPhotoComponent';
 import { connect } from 'react-redux';
-import {addPhoto} from '../redux/ActionCreators';
+import {addPhoto, fetchPhotos} from '../redux/ActionCreators';
 
 //map state to props from app to main
 const mapStateToProps = state => {
@@ -19,7 +19,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch =>({
     addPhoto: (name, image, description) => dispatch
-    (addPhoto(name, image, description))
+    (addPhoto(name, image, description)),
+    fetchPhotos: () => { dispatch(fetchPhotos())}
 });
 
 class Main extends Component{
@@ -29,6 +30,10 @@ class Main extends Component{
             photos: PHOTOS
         };
     }
+
+    componentDidMount() {
+        this.props.fetchPhotos();
+      }
 
     render(){
 
@@ -40,7 +45,9 @@ class Main extends Component{
 
         const PhotoWithId = ({match}) =>{
             return(
-                <PhotoDetail photo={this.props.photos.filter((photo) => photo.id === parseInt(match.params.photoId,10))[0]}/>
+                <PhotoDetail photo={this.props.photos.photos.filter((photo) => photo.id === parseInt(match.params.photoId,10))[0]}
+                isLoading={this.props.photos.isLoading}
+                errMess={this.props.photos.errMess}/>
             );
         };
 

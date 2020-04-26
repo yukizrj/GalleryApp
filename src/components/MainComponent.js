@@ -8,7 +8,7 @@ import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import NewPhoto from './NewPhotoComponent';
 import { connect } from 'react-redux';
-import {addPhoto, fetchPhotos} from '../redux/ActionCreators';
+import {postPhoto, fetchPhotos} from '../redux/ActionCreators';
 
 //map state to props from app to main
 const mapStateToProps = state => {
@@ -18,8 +18,8 @@ const mapStateToProps = state => {
   }
 
 const mapDispatchToProps = dispatch =>({
-    addPhoto: (name, image, description) => dispatch
-    (addPhoto(name, image, description)),
+    postPhoto: (name, image, description) => dispatch
+    (postPhoto(name, image, description)),
     fetchPhotos: () => { dispatch(fetchPhotos())}
 });
 
@@ -58,7 +58,7 @@ class Main extends Component{
                     <Route path="/home" component={HomePage}/>
                     <Route exact path="/albums" component={() => <Albums photos={this.props.photos}/>}/>
                     <Route path="/albums/:photoId" component={PhotoWithId}/>
-                    <Route exact path="/newphoto" component={() => <NewPhoto addPhoto={this.props.addPhoto}/>}/>
+                    <Route exact path="/newphoto" component={() => <NewPhoto postPhoto={this.props.postPhoto}/>}/>
                     <Redirect to="/home"/>
                 </Switch>
                 <Footer/>

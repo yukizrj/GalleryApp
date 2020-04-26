@@ -1,4 +1,4 @@
-import {PHOTOS} from '../shared/photos';
+
 import * as ActionTypes from './ActionTypes';
 
 export const Photos = (state = { isLoading: true,

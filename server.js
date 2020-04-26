@@ -2,8 +2,20 @@ var express = require('express');
 var app = express();
 var multer = require('multer');
 var cors = require('cors');
+const bodyParser = require('body-parser');
+
+//serve our JSON files
+const fs = require('fs');
 
 app.use(cors())
+
+// configure our express instance with some body-parser settings 
+// including handling JSON data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// this is where we'll handle our various routes from
+const routes = require('./routes/routes.js')(app, fs);
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {

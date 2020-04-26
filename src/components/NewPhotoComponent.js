@@ -32,10 +32,8 @@ class NewPhoto extends Component {
             .then(res => { // then print response status
             console.log(res.statusText)
         })
-        // event.preventDefault();
-        //add new photo object
-        const imgpath = "assets/images/" + this.state.images.name;
-        this.props.addPhoto(values.name, imgpath, values.description);
+        .then(this.props.postPhoto(values.name, "assets/images/" + this.state.images.name, values.description))
+        
         //redirect to albums page
         this.props.history.push('/albums');
     }

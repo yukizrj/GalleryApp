@@ -13,6 +13,7 @@ export const postPhoto = (name, image, description) => (dispatch) => {
         image: image,
         description: description
     }
+    console.log("new photo data is: "+JSON.stringify(Photo));
 
     return fetch(baseUrl + 'newPhoto', {
         method: "POST",
@@ -28,15 +29,11 @@ export const postPhoto = (name, image, description) => (dispatch) => {
         } else {
           var error = new Error('Error ' + response.status + ': ' + response.statusText);
           error.response = response;
-          throw error;
+          console.log('post photos', error.message);
         }
-      },
-      error => {
-            throw error;
       })
     .then(response => response.json())
     .then(response => dispatch(addPhoto(response)))
-    .catch(error =>  { console.log('post photos', error.message); alert('Your photo could not be posted\nError: '+error.message); });
 }
 
 export const fetchPhotos = () => (dispatch) => {

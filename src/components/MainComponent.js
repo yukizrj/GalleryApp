@@ -9,6 +9,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import NewPhoto from './NewPhotoComponent';
 import { connect } from 'react-redux';
 import {postPhoto, fetchPhotos} from '../redux/ActionCreators';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 //map state to props from app to main
 const mapStateToProps = state => {
@@ -54,13 +55,17 @@ class Main extends Component{
         return(
             <div>
                 <Header/>
-                <Switch>
+                <TransitionGroup>
+                <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+                <Switch location={this.props.location}>
                     <Route path="/home" component={HomePage}/>
                     <Route exact path="/albums" component={() => <Albums photos={this.props.photos}/>}/>
                     <Route path="/albums/:photoId" component={PhotoWithId}/>
                     <Route exact path="/newphoto" component={() => <NewPhoto postPhoto={this.props.postPhoto}/>}/>
                     <Redirect to="/home"/>
                 </Switch>
+                </CSSTransition>
+                </TransitionGroup>
                 <Footer/>
             </div>
         );

@@ -3,16 +3,23 @@ import { Card, CardImg, CardText, CardBody,
     CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
+import { FadeTransform } from 'react-animation-components';
 
 function RenderPhoto({photo}){
     return(
-        <Card>
+        <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
+            <Card>           
                 <CardImg src={photo.image} alt={photo.name}/>
                 <CardBody>
                     <CardTitle>{photo.name}</CardTitle>
                     <CardText>{photo.description}</CardText>
                 </CardBody>
             </Card>
+        </FadeTransform>
     );
 };
 
